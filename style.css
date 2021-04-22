@@ -1,0 +1,163 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #dfdede;
+  font-size: 10px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  height: auto;
+  background-color: #ffffff;
+  margin: auto;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-cont {
+  width: 80%;
+}
+
+.input-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.input-container span {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.container-img img {
+  width: 100%;
+  height: auto;
+}
+
+.container-input {
+  display: flex;
+}
+
+.conta {
+  margin-right: 2px;
+  margin-bottom: 10px;
+}
+
+input[type="text"] {
+  width: 60%;
+}
+
+input[type="button"] {
+  background-color: #322d49;
+  color: #ffffff;
+  border: 0;
+  padding: 3px 5px;
+  font-weight: bold;
+  cursor: pointer;
+  outline: 0;
+}
+
+input[type="button"]:hover {
+  background-color: #252525;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #32444e;
+  text-shadow: 1px 1px 1px #8f9792;
+}
+
+p {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #0a0a0a;
+}
+
+pre {
+  font-size: 0.8rem;
+}
+
+#outTotal {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  background-color: #322d49;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.title h3 {
+  font-size: 1.3rem;
+  margin: 0px;
+}
+
+.table2 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.container-value {
+  display: flex;
+  justify-content: space-around;
+  background-color: #cecece;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: #322d49;
+  margin-bottom: 1px;
+}
+
+.container-value1 {
+  display: flex;
+  justify-content: space-around;
+  background-color: #9c9c9c;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 1px;
+}
+
+.container-value h4,
+.container-value1 h4 {
+  color: #322d49;
+  font-size: 1rem;
+  margin: 0px;
+}
+
+.title h3 {
+  color: #ffffff;
+}
+
+@media (min-width: 320px) and (max-width: 768px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: auto;
+    background-color: #ffffff;
+    margin: auto;
+    top: 50%;
+    left: -30%;
+    transform: translate(50%, -50%);
+    position: absolute;
+    box-shadow: 0px 2px 8px #88af8c;
+    justify-content: center;
+    align-items: center;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+}
