@@ -31,7 +31,7 @@ body {
 .input-container {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 10px;
+  margin-bottom: 0px;
 }
 
 .input-container span {
@@ -53,21 +53,70 @@ body {
   margin-bottom: 10px;
 }
 
-input[type="text"] {
-  width: 60%;
+.navVezes {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
 }
 
-input[type="button"] {
+#toggle {
+  display: none;
+  position: absolute;
+  right: 50px;
+}
+
+nav {
+  display: flex;
+  align-content: center;
+}
+
+nav ul {
+  margin: 0px;
+}
+
+nav ul li {
+  list-style: none;
   background-color: #322d49;
-  color: #ffffff;
+  padding: 5px 38px;
+  margin-bottom: 2px;
+}
+
+nav li:hover {
+  background-color: #46415f;
+}
+
+nav ul a {
+  color: #cecece;
+  font-weight: bold;
+  font-size: 0.8rem;
+  text-decoration: none;
+}
+
+nav ul a:hover {
+  color: #fff;
+}
+
+.parVezes {
+  display: flex;
+  flex-direction: column;
+}
+
+input[type="text"] {
+  width: 30%;
+}
+
+input[type="button"]#btnParcelas {
+  position: relative;
+  background-color: #b4b4b4;
+  color: #322d49;
   border: 0;
-  padding: 3px 5px;
+  padding: 3px 18px;
   font-weight: bold;
   cursor: pointer;
   outline: 0;
 }
 
-input[type="button"]:hover {
+input[type="button"]#btnSimular:hover {
   background-color: #252525;
 }
 
@@ -159,5 +208,9 @@ pre {
 
   h1 {
     font-size: 1.6rem;
+  }
+
+  #toggle {
+    right: 60px;
   }
 }

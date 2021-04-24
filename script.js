@@ -1,30 +1,29 @@
+function menuOn() {
+    let toggle = document.querySelector('#toggle');
+
+    if(toggle.style.display == 'block') {
+        toggle.style.display = 'none';
+    } else {
+        toggle.style.display = 'block'
+    }
+}
+let btnParcelas = document.querySelector('#btnParcelas');
+btnParcelas.addEventListener("click", menuOn);
+
+let parcelasX = document.querySelectorAll(".parce1, .parce2, .parce3, .parce4, .parce5");
+let alteraCont = document.querySelectorAll(".outTotal, .outParcelas, .outParValor");
+
+function menuOff() {
+    toggle.style.display = 'none';
+}
+parcelasX[0].addEventListener("click", menuOff);
+parcelasX[1].addEventListener("click", menuOff);
+parcelasX[2].addEventListener("click", menuOff);
+parcelasX[3].addEventListener("click", menuOff);
+parcelasX[4].addEventListener("click", menuOff);
+
 function contadorParcelas() {
     let inValor = document.querySelector('#inValor');
-    let outParce1 = document.querySelector('.outParce1');
-    let outParce2 = document.querySelector('.outParce2');
-    let outParce3 = document.querySelector('.outParce3');
-    let outParce4 = document.querySelector('.outParce4');
-    let outParce5 = document.querySelector('.outParce5');
-
-    let outTotal = document.querySelector('.outTotal');
-    let outParcelas = document.querySelector('.outParcelas');
-    let outParValor = document.querySelector('.outParValor');
-
-    let outTotal2 = document.querySelector('.outTotal2');
-    let outParcelas2 = document.querySelector('.outParcelas2');
-    let outParValor2 = document.querySelector('.outParValor2');
-
-    let outTotal3 = document.querySelector('.outTotal3');
-    let outParcelas3 = document.querySelector('.outParcelas3');
-    let outParValor3 = document.querySelector('.outParValor3');
-
-    let outTotal4 = document.querySelector('.outTotal4');
-    let outParcelas4 = document.querySelector('.outParcelas4');
-    let outParValor4 = document.querySelector('.outParValor4');
-
-    let outTotal5 = document.querySelector('.outTotal5');
-    let outParcelas5 = document.querySelector('.outParcelas5');
-    let outParValor5 = document.querySelector('.outParValor5');
 
     let valor = Number(inValor.value);
 
@@ -34,34 +33,101 @@ function contadorParcelas() {
         return;
     }
 
-    let total = valor + (valor * 0.1) / 1;
+    if(parcelasX.length) {
+        let total = valor + (valor * 0.1) / 1;
+
+        alteraCont[0].textContent = `R$${total.toFixed(2)}`;
+        alteraCont[1].textContent = `1X`;
+        alteraCont[2].textContent = `R$${total.toFixed(2)}`;
+    }
+}
+parcelasX[0].addEventListener("click", contadorParcelas);
+
+function contadorParcelas2() {
+    let inValor = document.querySelector('#inValor');
+
+    let valor = Number(inValor.value);
+
+    if(valor == "" || isNaN(valor)) {
+        alert("Por favor, digite um valor válido!!!");
+        inValor.focus();
+        return;
+    }
+
     let total2 = valor + (valor * 0.2);
+
+    if(parcelasX.length) {
+        alteraCont[0].textContent = `R$${total2.toFixed(2)}`;
+        alteraCont[1].textContent = `2X`;
+        alteraCont[2].textContent = `R$${total2.toFixed(2) / 2}`;
+    }
+}
+parcelasX[1].addEventListener("click", contadorParcelas2);
+
+function contadorParcelas3() {
+    let inValor = document.querySelector('#inValor');
+
+    let valor = Number(inValor.value);
+
+    if(valor == "" || isNaN(valor)) {
+        alert("Por favor, digite um valor válido!!!");
+        inValor.focus();
+        return;
+    }
+
     let total3 = valor + (valor * 0.3);
+
+    if(parcelasX.length) {
+        alteraCont[0].textContent = `R$${total3.toFixed(2)}`;
+        alteraCont[1].textContent = `3X`;
+        alteraCont[2].textContent = `R$${total3.toFixed(2) / 3}`;
+    }
+}
+parcelasX[2].addEventListener("click", contadorParcelas3);
+
+function contadorParcelas4() {
+    let inValor = document.querySelector('#inValor');
+
+    let valor = Number(inValor.value);
+
+    if(valor == "" || isNaN(valor)) {
+        alert("Por favor, digite um valor válido!!!");
+        inValor.focus();
+        return;
+    }
+
     let total4 = valor + (valor * 0.4);
+
+    if(parcelasX.length) {
+        alteraCont[0].textContent = `R$${total4.toFixed(2)}`;
+        alteraCont[1].textContent = `4X`;
+        alteraCont[2].textContent = `R$${total4.toFixed(2) / 4}`;
+    }
+}
+parcelasX[3].addEventListener("click", contadorParcelas4);
+
+function contadorParcelas5() {
+    let inValor = document.querySelector('#inValor');
+
+    let valor = Number(inValor.value);
+
+    if(valor == "" || isNaN(valor)) {
+        alert("Por favor, digite um valor válido!!!");
+        inValor.focus();
+        return;
+    }
+
     let total5 = valor + (valor * 0.5);
 
-
-    outTotal.textContent = `R$${total.toFixed(2)}`;
-    outParcelas.textContent = `1X`;
-    outParValor.textContent = `R$${total.toFixed(2)}`;
-
-    outTotal2.textContent = `R$${total2.toFixed(2)}`;
-    outParcelas2.textContent = `2X`;
-    outParValor2.textContent = `R$${(total2 / 2).toFixed(2)}`;
-
-    outTotal3.textContent = `R$${total3.toFixed(2)}`;
-    outParcelas3.textContent = `3X`;
-    outParValor3.textContent = `R$${(total2 / 3).toFixed(2)}`;
-
-    outTotal4.textContent = `R$${total4.toFixed(2)}`;
-    outParcelas4.textContent = `4X`;
-    outParValor4.textContent = `R$${(total4 / 4).toFixed(2)}`;
-
-    outTotal5.textContent = `R$${total5.toFixed(2)}`;
-    outParcelas5.textContent = `5X`;
-    outParValor5.textContent = `R$${(total5 / 5).toFixed(2)}`;
-    
+    if(parcelasX.length) {
+        alteraCont[0].textContent = `R$${total5.toFixed(2)}`;
+        alteraCont[1].textContent = `5X`;
+        alteraCont[2].textContent = `R$${total5.toFixed(2) / 5}`;
+    }
 }
+parcelasX[4].addEventListener("click", contadorParcelas5);
 
-let btnSimular = document.querySelector('#btnSimular');
-btnSimular.addEventListener("click", contadorParcelas);
+
+
+
+
