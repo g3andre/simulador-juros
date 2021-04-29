@@ -60,7 +60,6 @@ body {
 }
 
 #toggle {
-  display: none;
   position: absolute;
   right: 50px;
 }
@@ -213,4 +212,8 @@ pre {
   #toggle {
     right: 60px;
   }
+}
+
+.display-none {
+  display: none;
 }

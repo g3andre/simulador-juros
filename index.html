@@ -1,58 +1,57 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <div class="container-img">
-            <img src="." alt="">
-        </div>
-        <div class="container-cont">
-            <div class="input-container"><span>**R$</span>
-                <input type="text" id="inValor">
-                
-                <div class="parVezes">
-                    <input type="button" value="Parcelas" id="btnParcelas">
-                </div>
-            </div>
-            <div class="navVezes">
-                <div>
+      <div class="container-img">
+        <img src="." alt="" />
+      </div>
+      <div class="container-cont">
+        <div class="input-container">
+          <span>**R$</span>
+          <input type="text" id="inValor" />
 
-                </div>
-                <div id="navMenu">
-                    <nav id="toggle">
-                        <ul>
-                            <a href="http://"><li class="parce">1X</li></a>
-                            <a href="http://"><li class="parce">2X</li></a>
-                            <a href="http://"><li class="parce">3X</li></a>
-                            <a href="http://"><li class="parce">4X</li></a>
-                            <a href="http://"><li class="parce">5X</li></a>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-            <div class="table">
-                <div class="title">
-                    <h3>Total</h3>
-                    <h3>Nº Parcelas</h3>
-                    <h3>Parcelas</h3>
-                </div>
-                <div class="table2">
-                    <div class="container-value outParce1">
-                        <h4 class="outTotal"></h4>
-                        <h4 class="outParcelas"></h4>
-                        <h4 class="outParValor"></h4>
-                    </div>          
-                </div>
-            </div>
+          <div class="parVezes">
+            <input type="button" value="Parcelas" id="btnParcelas" />
+          </div>
         </div>
+        <div class="navVezes">
+          <div></div>
+          <div id="navMenu">
+            <nav id="toggle" class="display-none">
+              <ul>
+                <a href="#"><li class="parce">1X</li></a>
+                <a href="#"><li class="parce">2X</li></a>
+                <a href="#"><li class="parce">3X</li></a>
+                <a href="#"><li class="parce">4X</li></a>
+                <a href="#"><li class="parce">5X</li></a>
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <div class="table">
+          <div class="title">
+            <h3>Total</h3>
+            <h3>Nº Parcelas</h3>
+            <h3>Parcelas</h3>
+          </div>
+          <div class="table2">
+            <div class="container-value outParce1">
+              <h4 class="outTotal"></h4>
+              <h4 class="outParcelas"></h4>
+              <h4 class="outParValor"></h4>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <script src="./script.js"></script>
-</body>
+  </body>
 </html>

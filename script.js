@@ -3,11 +3,7 @@
 function menuOn() {
     let toggle = document.querySelector('#toggle');
 
-    if(toggle.style.display == 'block') {
-        toggle.style.display = 'none';
-    } else {
-        toggle.style.display = 'block'
-    }
+    toggle.classList.toggle('display-none')
 }
 let btnParcelas = document.querySelector('#btnParcelas');
 btnParcelas.addEventListener("click", menuOn);
@@ -17,59 +13,35 @@ let parcelasX = document.querySelectorAll(".parce");
 let alteraCont = document.querySelectorAll(".outTotal, .outParcelas, .outParValor");
 
 function menuOff() {
-    toggle.style.display = 'none';
+    toggle.classList.toggle('display-none')
 }
-parcelasX.forEach(parcelas => {parcelas.addEventListener("click", menuOff)});
+parcelasX.forEach( (parcelas,index) => {parcelas.addEventListener("click", ()=>{
+    contadorParcelas(index+1);
+})});
 
 
-
-
-
-function contadorParcelas() {
+function contadorParcelas(parcelas) {
     let inValor = document.querySelector('#inValor');
 
     let valor = Number(inValor.value);
 
-    if(valor == "" || isNaN(valor)) {
+    if(!valor || isNaN(valor)) {
         alert("Por favor, digite um valor válido!!!");
         inValor.focus();
         return;
     }
 
-    if(parcelasX[0]) {
-        let total = valor + (valor * 0.1) / 1;
+    let total = valor + (valor * (parcelas/10) / 1 );
+    
+    alteraCont[0].textContent = `R$${total.toFixed(2)}`;
+    alteraCont[1].textContent = `${parcelas}X`;
+    alteraCont[2].textContent = `R$${total.toFixed(2)}`;
 
-        alteraCont[0].textContent = `R$${total.toFixed(2)}`;
-        alteraCont[1].textContent = `1X`;
-        alteraCont[2].textContent = `R$${total.toFixed(2)}`;
-    } else if(parcelasX[1]) {
-        let total2 = valor + (valor * 0.2);
 
-        alteraCont[0].textContent = `R$${total2.toFixed(2)}`;
-        alteraCont[1].textContent = `2X`;
-        alteraCont[2].textContent = `R$${total2.toFixed(2) / 2}`;
-    } else if(parcelasX[2]) {
-        let total3 = valor + (valor * 0.3);
-
-        alteraCont[0].textContent = `R$${total3.toFixed(2)}`;
-        alteraCont[1].textContent = `3X`;
-        alteraCont[2].textContent = `R$${ (total3.toFixed(2) / 3).toFixed(2)}`;
-    } else if(parcelasX[3]) {
-        let total4 = valor + (valor * 0.4);
-
-        alteraCont[0].textContent = `R$${total4.toFixed(2)}`;
-        alteraCont[1].textContent = `4X`;
-        alteraCont[2].textContent = `R$${total4.toFixed(2) / 4}`;
-    } else if(parcelasX[4]){
-        let total5 = valor + (valor * 0.5);
-
-        alteraCont[0].textContent = `R$${total5.toFixed(2)}`;
-        alteraCont[1].textContent = `5X`;
-        alteraCont[2].textContent = `R$${total5.toFixed(2) / 5}`;
-    }
+    menuOff();
 }
-parcelasX[length].addEventListener("click", contadorParcelas);
-
+/* parcelasX[length].addEventListener("click", contadorParcelas);
+ */
 
 
 
