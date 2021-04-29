@@ -35,7 +35,7 @@ function contadorParcelas(parcelas) {
     
     alteraCont[0].textContent = `R$${total.toFixed(2)}`;
     alteraCont[1].textContent = `${parcelas}X`;
-    alteraCont[2].textContent = `R$${total.toFixed(2)}`;
+    alteraCont[2].textContent = `R$${(total/parcelas).toFixed(2)}`;
 
 
     menuOff();
